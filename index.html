@@ -18,25 +18,30 @@
             margin: 0;
             color: white;
             position: relative;
+            overflow: hidden;
         }
 
         h1 {
-            margin-top: 220px;
-            font-size:1.5rem;
+            margin-top: 180px;
+            font-size: 1.2rem;
             text-align: center;
             color: var(--green);
             position: relative;
             text-transform: uppercase;
             letter-spacing: 2px;
-            width: 0;
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typing 3s steps(30) forwards;
+            opacity: 0;
+            animation: textFadeIn 2s ease forwards;
         }
 
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 600px }  /* Adjust this value based on your text length */
+        @keyframes textFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1::before,
@@ -94,13 +99,24 @@
 
         .button-container {
             position: absolute;
-            top: 60%;
+            top: 50%;
             transform: translateY(-50%);
             display: flex;
             gap: 20px;
             opacity: 0;
-            animation: fadeIn 0.5s ease-in forwards;
-            animation-delay: 3s;
+            animation: buttonFadeIn 1s ease-in forwards;
+            animation-delay: 2s;
+        }
+
+        @keyframes buttonFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(-50%) translateY(0);
+            }
         }
 
         /* Button Styling */
@@ -144,14 +160,9 @@
         /* Copyright Styling */
         .copyright {
             position: absolute;
-            bottom: 10px;
-            font-size: 14px;
+            bottom: 20px;
+            font-size: 12px;
             color: #ffffffa0;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         .hidden {
