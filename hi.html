@@ -22,7 +22,7 @@
 
         h1 {
             margin-top: 220px;
-            font-size:1.5rem;
+            font-size: 1.5rem;
             text-align: center;
             color: var(--green);
             position: relative;
@@ -32,26 +32,24 @@
             overflow: hidden;
             white-space: nowrap;
             animation: typing 3s steps(30) forwards;
+            display: inline-block;
         }
 
         @keyframes typing {
             from { width: 0 }
-            to { width: 600px }  /* Adjust this value based on your text length */
+            to { width: 420px }
         }
 
         h1::before,
         h1::after {
             content: "Select A Connect Method";
             position: absolute;
-            width: 100%;
+            width: 420px;
             height: 100%;
             left: 0;
             text-transform: uppercase;
             letter-spacing: 2px;
             white-space: nowrap;
-            animation: 
-                glitch-1 2s infinite linear,
-                typing 3s steps(30) forwards;  /* Added typing animation to pseudo elements */
         }
 
         h1::before {
@@ -103,9 +101,7 @@
             animation-delay: 3s;
         }
 
-        /* Button Styling */
         button {
-            --green: #1BFD9C;
             font-size: 15px;
             padding: 0.7em 2.7em;
             letter-spacing: 0.06em;
@@ -141,7 +137,6 @@
             transform: translateX(15em);
         }
 
-        /* Copyright Styling */
         .copyright {
             position: absolute;
             bottom: 10px;
@@ -149,13 +144,14 @@
             color: #ffffffa0;
         }
 
-        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
     <h1>Select A Connect Method</h1>
-
-
     
     <div class="button-container">
         <button>I'M READY</button>
@@ -165,7 +161,5 @@
     <div class="copyright">
         &copy; 2024 Your Company. All Rights Reserved.
     </div>
-
-   
 </body>
 </html>
